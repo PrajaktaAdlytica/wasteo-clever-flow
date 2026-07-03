@@ -9,38 +9,218 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsTrackRouteImport } from './routes/products.track'
+import { Route as ProductsSortRouteImport } from './routes/products.sort'
+import { Route as ProductsCostRouteImport } from './routes/products.cost'
 
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsTrackRoute = ProductsTrackRouteImport.update({
+  id: '/track',
+  path: '/track',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsSortRoute = ProductsSortRouteImport.update({
+  id: '/sort',
+  path: '/sort',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCostRoute = ProductsCostRouteImport.update({
+  id: '/cost',
+  path: '/cost',
+  getParentRoute: () => ProductsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/pricing': typeof PricingRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/request-demo': typeof RequestDemoRoute
+  '/resources': typeof ResourcesRoute
+  '/sign-in': typeof SignInRoute
+  '/solutions': typeof SolutionsRoute
+  '/products/cost': typeof ProductsCostRoute
+  '/products/sort': typeof ProductsSortRoute
+  '/products/track': typeof ProductsTrackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/pricing': typeof PricingRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/request-demo': typeof RequestDemoRoute
+  '/resources': typeof ResourcesRoute
+  '/sign-in': typeof SignInRoute
+  '/solutions': typeof SolutionsRoute
+  '/products/cost': typeof ProductsCostRoute
+  '/products/sort': typeof ProductsSortRoute
+  '/products/track': typeof ProductsTrackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/pricing': typeof PricingRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/request-demo': typeof RequestDemoRoute
+  '/resources': typeof ResourcesRoute
+  '/sign-in': typeof SignInRoute
+  '/solutions': typeof SolutionsRoute
+  '/products/cost': typeof ProductsCostRoute
+  '/products/sort': typeof ProductsSortRoute
+  '/products/track': typeof ProductsTrackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/pricing'
+    | '/products'
+    | '/request-demo'
+    | '/resources'
+    | '/sign-in'
+    | '/solutions'
+    | '/products/cost'
+    | '/products/sort'
+    | '/products/track'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/pricing'
+    | '/products'
+    | '/request-demo'
+    | '/resources'
+    | '/sign-in'
+    | '/solutions'
+    | '/products/cost'
+    | '/products/sort'
+    | '/products/track'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/pricing'
+    | '/products'
+    | '/request-demo'
+    | '/resources'
+    | '/sign-in'
+    | '/solutions'
+    | '/products/cost'
+    | '/products/sort'
+    | '/products/track'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  PricingRoute: typeof PricingRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
+  RequestDemoRoute: typeof RequestDemoRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SignInRoute: typeof SignInRoute
+  SolutionsRoute: typeof SolutionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +228,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/track': {
+      id: '/products/track'
+      path: '/track'
+      fullPath: '/products/track'
+      preLoaderRoute: typeof ProductsTrackRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/sort': {
+      id: '/products/sort'
+      path: '/sort'
+      fullPath: '/products/sort'
+      preLoaderRoute: typeof ProductsSortRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/cost': {
+      id: '/products/cost'
+      path: '/cost'
+      fullPath: '/products/cost'
+      preLoaderRoute: typeof ProductsCostRouteImport
+      parentRoute: typeof ProductsRoute
+    }
   }
 }
 
+interface ProductsRouteChildren {
+  ProductsCostRoute: typeof ProductsCostRoute
+  ProductsSortRoute: typeof ProductsSortRoute
+  ProductsTrackRoute: typeof ProductsTrackRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsCostRoute: ProductsCostRoute,
+  ProductsSortRoute: ProductsSortRoute,
+  ProductsTrackRoute: ProductsTrackRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  PricingRoute: PricingRoute,
+  ProductsRoute: ProductsRouteWithChildren,
+  RequestDemoRoute: RequestDemoRoute,
+  ResourcesRoute: ResourcesRoute,
+  SignInRoute: SignInRoute,
+  SolutionsRoute: SolutionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
