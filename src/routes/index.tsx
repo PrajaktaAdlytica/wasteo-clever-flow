@@ -146,11 +146,12 @@ function CostViz() {
 }
 
 function MapViz() {
+  // Deterministic pattern (SSR-safe)
   return (
     <svg viewBox="0 0 100 40" className="h-full w-full">
       {Array.from({ length: 8 }).map((_, r) =>
         Array.from({ length: 20 }).map((_, c) => {
-          const on = Math.random() > 0.6;
+          const on = (r * 7 + c * 3) % 5 === 0;
           return <circle key={`${r}-${c}`} cx={c * 5 + 2} cy={r * 5 + 2} r="0.9" fill={on ? "#22C55E" : "#ffffff"} opacity={on ? 0.9 : 0.15} />;
         })
       )}
