@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  BarChart3,
   Brain,
   ChevronDown,
   CheckCircle2,
@@ -10,11 +9,6 @@ import {
   FileText,
   LayoutGrid,
   Recycle,
-  TrendingDown,
-  Factory,
-  Store,
-  Building2,
-  Truck,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
