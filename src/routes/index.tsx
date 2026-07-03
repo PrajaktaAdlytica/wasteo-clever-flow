@@ -418,15 +418,19 @@ function Pricing() {
     <Section eyebrow="Pricing" title="Simple, per-site pricing.">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {plans.map((p) => {
-          const accent =
-            p.tone === "primary" ? "border-primary/40 text-primary" :
-            p.tone === "accent" ? "border-accent/40 text-accent" :
-            p.tone === "info" ? "border-info/40 text-info" :
-            "border-white/15 text-white";
-          const [ac, tc] = accent.split(" ");
+          const border =
+            p.tone === "primary" ? "border-l-primary" :
+            p.tone === "accent" ? "border-l-accent" :
+            p.tone === "info" ? "border-l-info" :
+            "border-l-white/25";
+          const text =
+            p.tone === "primary" ? "text-primary" :
+            p.tone === "accent" ? "text-accent" :
+            p.tone === "info" ? "text-info" :
+            "text-white";
           return (
-            <div key={p.n} className={`card-surface p-6 border-l-2 ${ac}`}>
-              <p className={`text-sm font-semibold ${tc}`}>{p.n}</p>
+            <div key={p.n} className={`card-surface p-6 border-l-2 ${border}`}>
+              <p className={`text-sm font-semibold ${text}`}>{p.n}</p>
               <p className="mt-2 text-xs text-white/60">{p.desc}</p>
               {p.price.startsWith("€") ? (
                 <>
@@ -441,7 +445,7 @@ function Pricing() {
               )}
               <Link
                 to="/request-demo"
-                className={`mt-6 inline-flex w-full items-center justify-center rounded-md border ${ac.replace("border-", "border-")} bg-transparent px-4 py-2 text-xs font-semibold ${tc} transition hover:bg-white/5`}
+                className={`mt-6 inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-transparent px-4 py-2 text-xs font-semibold ${text} transition hover:bg-white/5 hover:border-white/30`}
               >
                 {p.cta}
               </Link>
