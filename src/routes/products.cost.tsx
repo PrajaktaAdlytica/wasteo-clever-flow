@@ -6,9 +6,9 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/cost")({
   head: () => ({
     meta: [
-      { title: "Wasteo Cost — Disposal cost analytics" },
+      { title: "WasteXa Cost — Disposal cost analytics" },
       { name: "description", content: "Understand true disposal costs, benchmark vendors and identify savings across the estate." },
-      { property: "og:title", content: "Wasteo Cost — Disposal cost analytics" },
+      { property: "og:title", content: "WasteXa Cost — Disposal cost analytics" },
       { property: "og:description", content: "Cost analytics for industrial waste operations." },
     ],
   }),
@@ -20,10 +20,10 @@ function CostPage() {
     <SiteLayout>
       <ProductTemplate
         tone="accent"
-        eyebrow="Wasteo Cost"
+        eyebrow="WasteXa Cost"
         icon={<Euro size={12} />}
         title="Understand disposal costs and identify savings."
-        subtitle="Wasteo Cost turns opaque waste invoices into a live cost dashboard — per stream, per vendor, per site — with savings recommendations."
+        subtitle="WasteXa Cost turns opaque waste invoices into a live cost dashboard — per stream, per vendor, per site — with savings recommendations."
         bullets={[
           "Automatic invoice ingestion and normalisation",
           "Vendor benchmarking across the entire estate",

@@ -6,8 +6,8 @@ import { Logo } from "@/components/site/Logo";
 export const Route = createFileRoute("/sign-in")({
   head: () => ({
     meta: [
-      { title: "Sign In — Wasteo" },
-      { name: "description", content: "Sign in to the Wasteo waste intelligence platform." },
+      { title: "Sign In — WasteXa" },
+      { name: "description", content: "Sign in to the WasteXa waste intelligence platform." },
     ],
   }),
   component: SignIn,
@@ -22,7 +22,7 @@ function SignIn() {
         <Logo className="h-9" />
         <div className="mt-8 w-full glass-strong rounded-2xl p-8">
           <h1 className="text-2xl font-semibold text-white">Welcome back</h1>
-          <p className="mt-1 text-sm text-white/60">Sign in to your Wasteo operational dashboard.</p>
+          <p className="mt-1 text-sm text-white/60">Sign in to your WasteXa operational dashboard.</p>
           {done ? (
             <p className="mt-6 rounded-md border border-primary/25 bg-primary/10 p-4 text-sm text-primary">
               Signed in — redirecting to your dashboard.

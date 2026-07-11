@@ -6,9 +6,9 @@ const cols = [
   {
     title: "Product",
     links: [
-      { to: "/products/track", label: "Wasteo Track" },
-      { to: "/products/cost", label: "Wasteo Cost" },
-      { to: "/products/sort", label: "Wasteo Sort" },
+      { to: "/products/track", label: "WasteXa Track" },
+      { to: "/products/cost", label: "WasteXa Cost" },
+      { to: "/products/sort", label: "WasteXa Sort" },
       { to: "/products", label: "Platform" },
     ],
   },
@@ -79,16 +79,16 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">Contact</p>
             <div className="mt-4 space-y-1.5 text-sm text-white/70">
-              <p className="text-white/90">Wasteo Sp. z o.o.</p>
+              <p className="text-white/90">WasteXa Sp. z o.o.</p>
               <p>Prosta 70</p>
               <p>00-838 Warsaw</p>
               <p>Poland</p>
-              <p className="pt-2"><a href="mailto:hello@wasteo.io" className="hover:text-primary">hello@wasteo.io</a></p>
+              <p className="pt-2"><a href="mailto:hello@wastexa.com" className="hover:text-primary">hello@wastexa.com</a></p>
             </div>
           </div>
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Wasteo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} WasteXa. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/about" className="hover:text-white/70">Privacy Policy</Link>
             <Link to="/about" className="hover:text-white/70">Terms of Service</Link>

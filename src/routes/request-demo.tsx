@@ -7,9 +7,9 @@ import { Section } from "@/components/site/Section";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Request a Demo — Wasteo" },
-      { name: "description", content: "30-minute walkthrough of Wasteo on your own waste operation." },
-      { property: "og:title", content: "Request a Demo — Wasteo" },
+      { title: "Request a Demo — WasteXa" },
+      { name: "description", content: "30-minute walkthrough of WasteXa on your own waste operation." },
+      { property: "og:title", content: "Request a Demo — WasteXa" },
       { property: "og:description", content: "30-minute walkthrough on your own waste operation." },
     ],
   }),
@@ -22,7 +22,7 @@ function RequestDemo() {
     <SiteLayout>
       <Section
         eyebrow="Request Demo"
-        title="See Wasteo on your own waste operation."
+        title="See WasteXa on your own waste operation."
         subtitle="A European solutions engineer walks you through Track, Cost and Sort using your reporting scenario."
       >
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
@@ -45,7 +45,7 @@ function RequestDemo() {
             ))}
             <blockquote className="card-surface p-5">
               <p className="text-sm italic text-white/80">
-                "Dzięki Wasteo zaczęliśmy naprawdę rozumieć koszty odpadów. Zwrot z inwestycji w pierwszym kwartale."
+                "Dzięki WasteXa zaczęliśmy naprawdę rozumieć koszty odpadów. Zwrot z inwestycji w pierwszym kwartale."
               </p>
               <footer className="mt-4">
                 <p className="text-xs font-medium text-white">Marta Dąbrowska</p>
@@ -61,7 +61,7 @@ function RequestDemo() {
               <div className="flex flex-col items-center py-14 text-center">
                 <CheckCircle2 className="text-primary" size={40} />
                 <h3 className="mt-4 text-xl font-semibold text-white">Request received.</h3>
-                <p className="mt-2 text-sm text-white/60">The Wasteo team will reach out within one business day.</p>
+                <p className="mt-2 text-sm text-white/60">The WasteXa team will reach out within one business day.</p>
               </div>
             ) : (
               <>

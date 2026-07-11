@@ -7,9 +7,9 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Wasteo" },
-      { name: "description", content: "Wasteo Track, Cost and Sort — three modules, one waste intelligence platform." },
-      { property: "og:title", content: "Products — Wasteo" },
+      { title: "Products — WasteXa" },
+      { name: "description", content: "WasteXa Track, Cost and Sort — three modules, one waste intelligence platform." },
+      { property: "og:title", content: "Products — WasteXa" },
       { property: "og:description", content: "Three modules, one waste intelligence platform." },
     ],
   }),
@@ -17,9 +17,9 @@ export const Route = createFileRoute("/products")({
 });
 
 const items = [
-  { slug: "/products/track", name: "Wasteo Track", icon: Recycle, tag: "Waste monitoring", tone: "primary", d: "Monitor waste generation across every facility with real-time site-level dashboards." },
-  { slug: "/products/cost", name: "Wasteo Cost", icon: Euro, tag: "Cost analytics", tone: "accent", d: "Understand disposal costs, benchmark vendors and identify savings across the estate." },
-  { slug: "/products/sort", name: "Wasteo Sort", icon: Brain, tag: "AI classification", tone: "info", d: "Automatically classify waste streams using AI vision — plastic, metal, paper, organic." },
+  { slug: "/products/track", name: "WasteXa Track", icon: Recycle, tag: "Waste monitoring", tone: "primary", d: "Monitor waste generation across every facility with real-time site-level dashboards." },
+  { slug: "/products/cost", name: "WasteXa Cost", icon: Euro, tag: "Cost analytics", tone: "accent", d: "Understand disposal costs, benchmark vendors and identify savings across the estate." },
+  { slug: "/products/sort", name: "WasteXa Sort", icon: Brain, tag: "AI classification", tone: "info", d: "Automatically classify waste streams using AI vision — plastic, metal, paper, organic." },
 ];
 
 function ProductsPage() {
@@ -28,7 +28,7 @@ function ProductsPage() {
       <Section
         eyebrow="Products"
         title="Three modules. One waste intelligence platform."
-        subtitle="Buy them together as the Wasteo Platform, or start with the module that closes your most urgent gap."
+        subtitle="Buy them together as the WasteXa Platform, or start with the module that closes your most urgent gap."
       >
         <div className="grid gap-5 lg:grid-cols-3">
           {items.map((p) => {

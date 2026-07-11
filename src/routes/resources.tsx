@@ -6,8 +6,8 @@ import { Section } from "@/components/site/Section";
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Wasteo" },
-      { name: "description", content: "Documentation, case studies, guides and blog from the Wasteo team." },
+      { title: "Resources — WasteXa" },
+      { name: "description", content: "Documentation, case studies, guides and blog from the WasteXa team." },
     ],
   }),
   component: Resources,
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources")({
 
 const items = [
   { icon: BookOpen, t: "Documentation", d: "Product docs, API references and integration guides." },
-  { icon: FileText, t: "Case Studies", d: "How European operators cut disposal costs with Wasteo." },
+  { icon: FileText, t: "Case Studies", d: "How European operators cut disposal costs with WasteXa." },
   { icon: Newspaper, t: "Blog", d: "Latest thinking on waste intelligence, circularity and ESG." },
   { icon: GraduationCap, t: "Guides", d: "Playbooks for sustainability, procurement and operations teams." },
 ];

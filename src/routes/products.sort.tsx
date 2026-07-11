@@ -6,9 +6,9 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/sort")({
   head: () => ({
     meta: [
-      { title: "Wasteo Sort — AI waste classification" },
+      { title: "WasteXa Sort — AI waste classification" },
       { name: "description", content: "Automatically classify waste streams using AI computer vision — plastic, metal, paper, organic." },
-      { property: "og:title", content: "Wasteo Sort — AI waste classification" },
+      { property: "og:title", content: "WasteXa Sort — AI waste classification" },
       { property: "og:description", content: "AI-powered waste stream classification." },
     ],
   }),
@@ -20,10 +20,10 @@ function SortPage() {
     <SiteLayout>
       <ProductTemplate
         tone="info"
-        eyebrow="Wasteo Sort"
+        eyebrow="WasteXa Sort"
         icon={<Brain size={12} />}
         title="Automatically classify waste streams using AI."
-        subtitle="Wasteo Sort uses computer vision trained on millions of material images to classify every stream — automatically, at line speed, with human-verifiable confidence."
+        subtitle="WasteXa Sort uses computer vision trained on millions of material images to classify every stream — automatically, at line speed, with human-verifiable confidence."
         bullets={[
           "Real-time computer-vision classification (plastic, metal, paper, organic)",
           "Contamination detection with confidence scores",

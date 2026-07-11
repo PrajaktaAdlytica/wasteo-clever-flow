@@ -201,9 +201,9 @@ function TrustedBy() {
 
 function Solution() {
   const products = [
-    { name: "Wasteo Track", desc: "Monitor waste generation across every facility.", tone: "primary" as const, viz: <TrackViz /> },
-    { name: "Wasteo Cost", desc: "Understand disposal costs and identify savings.", tone: "accent" as const, viz: <CostAnalyticsViz /> },
-    { name: "Wasteo Sort", desc: "Automatically classify waste streams using AI.", tone: "info" as const, viz: <SortViz /> },
+    { name: "WasteXa Track", desc: "Monitor waste generation across every facility.", tone: "primary" as const, viz: <TrackViz /> },
+    { name: "WasteXa Cost", desc: "Understand disposal costs and identify savings.", tone: "accent" as const, viz: <CostAnalyticsViz /> },
+    { name: "WasteXa Sort", desc: "Automatically classify waste streams using AI.", tone: "info" as const, viz: <SortViz /> },
   ];
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
@@ -462,12 +462,12 @@ function Pricing() {
 
 const TESTIMONIALS = [
   {
-    quote: "Wasteo pomógł nam znacząco poprawić segregację i obniżyć koszty wywozu odpadów.",
+    quote: "WasteXa pomógł nam znacząco poprawić segregację i obniżyć koszty wywozu odpadów.",
     name: "Jan Kowalski",
     role: "Kierownik Ochrony Środowiska, ORLEN",
   },
   {
-    quote: "Dzięki Wasteo mamy pełną kontrolę nad strumieniami odpadów we wszystkich zakładach.",
+    quote: "Dzięki WasteXa mamy pełną kontrolę nad strumieniami odpadów we wszystkich zakładach.",
     name: "Anna Nowak",
     role: "ESG Manager, LPP",
   },
@@ -520,9 +520,9 @@ function Testimonials() {
 /* ---------------- FAQ ---------------- */
 
 const FAQS = [
-  ["What is Wasteo?", "Wasteo is an AI-powered waste intelligence platform that helps industrial operators track waste streams, understand disposal costs and optimise recycling performance."],
-  ["How does AI classification work?", "Wasteo Sort uses computer vision and machine learning models trained on millions of material images to automatically classify waste streams by type, contamination and recyclability."],
-  ["Can Wasteo integrate with our systems?", "Yes — Wasteo integrates with ERP, MES, IoT sensors, weighbridges and existing waste management software through open APIs and pre-built connectors."],
+  ["What is WasteXa?", "WasteXa is an AI-powered waste intelligence platform that helps industrial operators track waste streams, understand disposal costs and optimise recycling performance."],
+  ["How does AI classification work?", "WasteXa Sort uses computer vision and machine learning models trained on millions of material images to automatically classify waste streams by type, contamination and recyclability."],
+  ["Can WasteXa integrate with our systems?", "Yes — WasteXa integrates with ERP, MES, IoT sensors, weighbridges and existing waste management software through open APIs and pre-built connectors."],
   ["Is my data secure?", "Your data is stored exclusively in the EU with region choice — Frankfurt, Warsaw or Paris — GDPR by design, ISO 27001 aligned and encrypted end-to-end."],
   ["How is pricing calculated?", "Pricing is per site, per month, billed annually. Enterprise volume pricing is available for operators with more than 20 sites."],
 ];

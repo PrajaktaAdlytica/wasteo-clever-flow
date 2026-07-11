@@ -12,8 +12,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const TITLE = "Wasteo — AI Waste Intelligence Platform";
-const DESC = "Wasteo turns industrial waste into measurable value — track waste streams, understand disposal costs and optimise recycling performance from one intelligent operational platform.";
+const TITLE = "WasteXa — AI Waste Intelligence Platform";
+const DESC = "WasteXa turns industrial waste into measurable value — track waste streams, understand disposal costs and optimise recycling performance from one intelligent operational platform.";
 
 function NotFoundComponent() {
   return (
@@ -55,25 +55,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "author", content: "Wasteo" },
+      { name: "author", content: "WasteXa" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { title: "wasteo" },
-      { property: "og:title", content: "wasteo" },
-      { name: "twitter:title", content: "wasteo" },
-      { name: "description", content: "Wasteo Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
-      { property: "og:description", content: "Wasteo Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
-      { name: "twitter:description", content: "Wasteo Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0a479eb-8f52-40be-a02f-43726d04b4c0/id-preview-692c2ae8--30b0d49d-c580-410b-8767-c9a1b3b36ee4.lovable.app-1783088696581.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0a479eb-8f52-40be-a02f-43726d04b4c0/id-preview-692c2ae8--30b0d49d-c580-410b-8767-c9a1b3b36ee4.lovable.app-1783088696581.png" },
+      { title: "wastexa" },
+      { property: "og:title", content: "wastexa" },
+      { name: "twitter:title", content: "wastexa" },
+      { name: "description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
+      { property: "og:description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
+      { name: "twitter:description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
+      { property: "og:image", content: "https://wastexa.com/wastexa-favicon.svg?v=wastexa" },
+      { name: "twitter:image", content: "https://wastexa.com/wastexa-favicon.svg?v=wastexa" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/wastexa-favicon.svg?v=wastexa", type: "image/svg+xml" },
+      { rel: "alternate icon", href: "/favicon.ico?v=wastexa" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },

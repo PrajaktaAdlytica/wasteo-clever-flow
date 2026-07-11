@@ -34,7 +34,7 @@ export function WasteDashboard() {
         <aside className="col-span-3 rounded-xl border border-white/8 bg-black/30 p-3">
           <div className="flex items-center gap-2 px-2 pb-3 pt-1">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/15 text-primary"><Recycle size={12} /></span>
-            <span className="text-xs font-semibold text-white/80">Wasteo</span>
+            <span className="text-xs font-semibold text-white/80">WasteXa</span>
           </div>
           <nav className="space-y-1">
             {nav.map((n) => {

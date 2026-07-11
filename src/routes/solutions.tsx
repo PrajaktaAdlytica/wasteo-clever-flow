@@ -7,9 +7,9 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solutions — Wasteo" },
-      { name: "description", content: "Wasteo for factories, manufacturers, retailers, municipalities and waste operators." },
-      { property: "og:title", content: "Solutions — Wasteo" },
+      { title: "Solutions — WasteXa" },
+      { name: "description", content: "WasteXa for factories, manufacturers, retailers, municipalities and waste operators." },
+      { property: "og:title", content: "Solutions — WasteXa" },
       { property: "og:description", content: "One platform. Five operating contexts." },
     ],
   }),
@@ -30,7 +30,7 @@ function Solutions() {
       <Section
         eyebrow="Solutions"
         title="One platform. Five operating contexts."
-        subtitle="Wasteo adapts to how your sector actually works — the regulators, the reporting cycles and the escalation paths."
+        subtitle="WasteXa adapts to how your sector actually works — the regulators, the reporting cycles and the escalation paths."
       >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((x) => {

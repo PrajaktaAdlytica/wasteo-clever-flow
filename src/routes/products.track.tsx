@@ -6,9 +6,9 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/track")({
   head: () => ({
     meta: [
-      { title: "Wasteo Track — Monitor waste generation" },
+      { title: "WasteXa Track — Monitor waste generation" },
       { name: "description", content: "Real-time waste tracking across every facility with site-level dashboards and weighbridge integrations." },
-      { property: "og:title", content: "Wasteo Track — Monitor waste generation" },
+      { property: "og:title", content: "WasteXa Track — Monitor waste generation" },
       { property: "og:description", content: "Real-time waste tracking across every facility." },
     ],
   }),
@@ -20,10 +20,10 @@ function TrackPage() {
     <SiteLayout>
       <ProductTemplate
         tone="primary"
-        eyebrow="Wasteo Track"
+        eyebrow="WasteXa Track"
         icon={<Recycle size={12} />}
         title="Monitor waste generation across every facility."
-        subtitle="Wasteo Track replaces spreadsheets and paper logs with one live picture of every tonne generated, moved and recovered — across every site."
+        subtitle="WasteXa Track replaces spreadsheets and paper logs with one live picture of every tonne generated, moved and recovered — across every site."
         bullets={[
           "Real-time waste generation tracking per site and stream",
           "Weighbridge, IoT and scale integrations out of the box",
@@ -37,7 +37,7 @@ function TrackPage() {
         ]}
         preview={<TrackDashboard />}
         faqs={[
-          ["Do we need new hardware?", "No. Wasteo Track works with your existing weighbridges, scales, IoT sensors and even manual entry."],
+          ["Do we need new hardware?", "No. WasteXa Track works with your existing weighbridges, scales, IoT sensors and even manual entry."],
           ["Which ESG frameworks are supported?", "CSRD, GRI, ISO 14001 and national waste reporting — pre-formatted exports."],
           ["How long does deployment take?", "First site live in under 2 weeks. Enterprise rollouts typically in 8-12 weeks."],
         ]}

@@ -7,9 +7,9 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Wasteo" },
-      { name: "description", content: "Simple per-site pricing for Wasteo Track, Cost and Sort. Enterprise volume pricing available." },
-      { property: "og:title", content: "Pricing — Wasteo" },
+      { title: "Pricing — WasteXa" },
+      { name: "description", content: "Simple per-site pricing for WasteXa Track, Cost and Sort. Enterprise volume pricing available." },
+      { property: "og:title", content: "Pricing — WasteXa" },
       { property: "og:description", content: "Simple per-site pricing." },
     ],
   }),

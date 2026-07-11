@@ -4,9 +4,9 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const products = [
-  { to: "/products/track", label: "Wasteo Track", desc: "Monitor waste generation." },
-  { to: "/products/cost", label: "Wasteo Cost", desc: "Analyse disposal costs." },
-  { to: "/products/sort", label: "Wasteo Sort", desc: "AI waste classification." },
+  { to: "/products/track", label: "WasteXa Track", desc: "Monitor waste generation." },
+  { to: "/products/cost", label: "WasteXa Cost", desc: "Analyse disposal costs." },
+  { to: "/products/sort", label: "WasteXa Sort", desc: "AI waste classification." },
 ];
 
 const nav = [
