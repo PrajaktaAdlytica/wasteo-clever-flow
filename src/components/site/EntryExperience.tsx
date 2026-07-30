@@ -10,8 +10,8 @@ const SCENES = [
     titleLead: "Source Europe with",
     titleAccent: "evidence.",
     support: "Find. Compare. Verify.",
-    video: "/entry-motion/atlas.mp4",
-    poster: "/entry-motion/atlas-poster.png",
+    video: "/entry-motion/atlas.mp4?v=20260731b",
+    poster: "/entry-motion/atlas-poster.png?v=20260731b",
     position: "64% center",
   },
   {
@@ -22,8 +22,8 @@ const SCENES = [
     titleLead: "Turn responses into a",
     titleAccent: "decision.",
     support: "Normalize every quote. See every risk.",
-    video: "/entry-motion/rfq.mp4",
-    poster: "/entry-motion/rfq-poster.png",
+    video: "/entry-motion/rfq.mp4?v=20260731b",
+    poster: "/entry-motion/rfq-poster.png?v=20260731b",
     position: "66% center",
   },
   {
@@ -34,8 +34,8 @@ const SCENES = [
     titleLead: "Know who is safe to",
     titleAccent: "source from.",
     support: "Evidence before award.",
-    video: "/entry-motion/compliance.mp4",
-    poster: "/entry-motion/compliance-poster.png",
+    video: "/entry-motion/compliance.mp4?v=20260731b",
+    poster: "/entry-motion/compliance-poster.png?v=20260731b",
     position: "65% center",
   },
 ] as const;
@@ -147,7 +147,7 @@ export function EntryExperience() {
               style={{
                 objectPosition: scene.position,
                 transitionDuration: "0ms",
-                filter: "brightness(1.16) saturate(1.16) contrast(1.06)",
+                filter: "brightness(1.24) saturate(1.22) contrast(1.1)",
               }}
             />
           ) : (
@@ -168,7 +168,7 @@ export function EntryExperience() {
               style={{
                 objectPosition: scene.position,
                 transitionDuration: `${CROSSFADE_MS}ms`,
-                filter: "brightness(1.16) saturate(1.16) contrast(1.06)",
+                filter: "brightness(1.24) saturate(1.22) contrast(1.1)",
               }}
             >
               <source src={scene.video} type="video/mp4" />
@@ -177,17 +177,17 @@ export function EntryExperience() {
         )}
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(4,8,15,0.87)_0%,rgba(4,8,15,0.5)_31%,rgba(4,8,15,0.04)_68%,rgba(4,8,15,0.16)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.04)_0%,transparent_48%,rgba(5,9,16,0.7)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(4,8,15,0.78)_0%,rgba(4,8,15,0.34)_27%,rgba(4,8,15,0)_58%,rgba(4,8,15,0.08)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.02)_0%,transparent_52%,rgba(5,9,16,0.56)_100%)]" />
 
       <div className="relative z-10 mx-auto flex min-h-svh max-w-7xl flex-col px-6 pb-7 pt-28 md:pb-9 md:pt-28">
-        <div className="flex max-w-lg flex-1 items-center py-12">
+        <div className="flex max-w-md flex-1 items-center py-12">
           <div key={activeScene.id} className="entry-copy">
             <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary md:text-[11px]">
               <span className="h-px w-7 bg-primary" aria-hidden="true" />
               {activeScene.eyebrow}
             </p>
-            <h1 className="max-w-[10ch] text-[clamp(2.35rem,4.4vw,4.75rem)] font-medium leading-[0.98] tracking-[-0.045em] text-white">
+            <h1 className="max-w-[14ch] text-[clamp(2.1rem,3.6vw,4rem)] font-medium leading-[1] tracking-[-0.04em] text-white">
               {activeScene.titleLead}{" "}
               <span className="text-primary-solid">{activeScene.titleAccent}</span>
             </h1>
