@@ -121,7 +121,7 @@ export function EntryExperience() {
   return (
     <section
       ref={sectionRef}
-      className="entry-experience relative isolate min-h-[calc(100svh-6.5rem)] overflow-hidden bg-[#070c15]"
+      className="entry-experience relative isolate -mt-[6.5rem] min-h-svh overflow-hidden bg-[#070c15]"
       aria-label="Explore three Wastexa product perspectives"
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") {
@@ -144,7 +144,11 @@ export function EntryExperience() {
               className={`absolute inset-0 h-full w-full object-cover transition-opacity ${
                 index === activeIndex ? "opacity-100" : "opacity-0"
               }`}
-              style={{ objectPosition: scene.position, transitionDuration: "0ms" }}
+              style={{
+                objectPosition: scene.position,
+                transitionDuration: "0ms",
+                filter: "brightness(1.16) saturate(1.16) contrast(1.06)",
+              }}
             />
           ) : (
             <video
@@ -164,6 +168,7 @@ export function EntryExperience() {
               style={{
                 objectPosition: scene.position,
                 transitionDuration: `${CROSSFADE_MS}ms`,
+                filter: "brightness(1.16) saturate(1.16) contrast(1.06)",
               }}
             >
               <source src={scene.video} type="video/mp4" />
@@ -172,22 +177,21 @@ export function EntryExperience() {
         )}
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(4,8,15,0.96)_0%,rgba(4,8,15,0.78)_32%,rgba(4,8,15,0.14)_70%,rgba(4,8,15,0.38)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.12)_0%,transparent_38%,rgba(5,9,16,0.9)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(90deg,black,transparent_56%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(4,8,15,0.87)_0%,rgba(4,8,15,0.5)_31%,rgba(4,8,15,0.04)_68%,rgba(4,8,15,0.16)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,9,16,0.04)_0%,transparent_48%,rgba(5,9,16,0.7)_100%)]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6.5rem)] max-w-7xl flex-col px-6 pb-7 pt-12 md:pb-9 md:pt-16">
-        <div className="flex max-w-xl flex-1 items-center py-14">
+      <div className="relative z-10 mx-auto flex min-h-svh max-w-7xl flex-col px-6 pb-7 pt-28 md:pb-9 md:pt-28">
+        <div className="flex max-w-lg flex-1 items-center py-12">
           <div key={activeScene.id} className="entry-copy">
             <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary md:text-[11px]">
               <span className="h-px w-7 bg-primary" aria-hidden="true" />
               {activeScene.eyebrow}
             </p>
-            <h1 className="max-w-[11ch] text-[clamp(2.8rem,6vw,6.6rem)] font-medium leading-[0.94] tracking-[-0.055em] text-white">
+            <h1 className="max-w-[10ch] text-[clamp(2.35rem,4.4vw,4.75rem)] font-medium leading-[0.98] tracking-[-0.045em] text-white">
               {activeScene.titleLead}{" "}
               <span className="text-primary-solid">{activeScene.titleAccent}</span>
             </h1>
-            <p className="mt-7 text-base font-medium tracking-[-0.01em] text-white/62 md:text-lg">
+            <p className="mt-6 text-sm font-medium tracking-[-0.01em] text-white/70 md:text-base">
               {activeScene.support}
             </p>
             <button
