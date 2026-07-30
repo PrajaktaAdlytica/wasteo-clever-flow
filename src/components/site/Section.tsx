@@ -16,7 +16,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`mx-auto max-w-7xl px-6 py-20 ${className}`}>
+    <section id={id} className={`mx-auto max-w-7xl px-6 py-20 ${className}`} data-reveal>
       {(eyebrow || title || subtitle) && (
         <div className="mb-12 max-w-3xl">
           {eyebrow && (
@@ -30,9 +30,7 @@ export function Section({
             </h2>
           )}
           {subtitle && (
-            <p className="mt-5 max-w-2xl text-base text-white/60 md:text-lg">
-              {subtitle}
-            </p>
+            <p className="mt-5 max-w-2xl text-base text-white/60 md:text-lg">{subtitle}</p>
           )}
         </div>
       )}

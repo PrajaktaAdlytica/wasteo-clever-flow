@@ -14,6 +14,7 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Section } from "@/components/site/Section";
@@ -31,6 +32,7 @@ function HomePage() {
       <Hero />
       <Problem />
       <TrustedBy />
+      <ChapterTransition />
       <Solution />
       <Platform />
       <Benefits />
@@ -55,45 +57,49 @@ function DemoLabel({ children = "Illustrative demo content" }: { children?: stri
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 grid-bg opacity-40" />
+      <div className="hero-grid absolute inset-0 -z-10 grid-bg opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[600px] bg-gradient-to-b from-primary/[0.06] to-transparent" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-20 lg:grid-cols-[1.05fr_0.9fr] lg:pt-24">
-        <div className="fade-up">
-          <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-            EU Supplier Intelligence & Sourcing
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-[62px] lg:leading-[1.05]">
-            Find qualified suppliers.{" "}
-            <span className="text-primary-solid">Compare bids. Act on risk.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-white/65">
-            Bring supplier discovery, RFQs, compliance documents and risk signals into one auditable
-            workflow—before you make an award.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <LiquidButton to="/products">Explore Interactive Demo</LiquidButton>
-            <Link to="/request-demo" className="btn-ghost">
-              Discuss a Pilot <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/55">
-            {[
-              "EU-first workflow",
-              "Evidence-led decisions",
-              "Human-reviewed AI",
-              "Auditable by design",
-            ].map((item) => (
-              <span key={item} className="inline-flex items-center gap-2">
-                <CheckCircle2 size={13} className="text-primary" /> {item}
-              </span>
-            ))}
-          </div>
-          <div className="mt-5">
-            <DemoLabel children="Illustrative product capabilities" />
+        <div className="hero-copy">
+          <div className="fade-up">
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+              EU Supplier Intelligence & Sourcing
+            </p>
+            <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-[62px] lg:leading-[1.05]">
+              Find qualified suppliers.{" "}
+              <span className="text-primary-solid">Compare bids. Act on risk.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/65">
+              Bring supplier discovery, RFQs, compliance documents and risk signals into one
+              auditable workflow—before you make an award.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <LiquidButton to="/products">Explore Interactive Demo</LiquidButton>
+              <Link to="/request-demo" className="btn-ghost">
+                Discuss a Pilot <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/55">
+              {[
+                "EU-first workflow",
+                "Evidence-led decisions",
+                "Human-reviewed AI",
+                "Auditable by design",
+              ].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-primary" /> {item}
+                </span>
+              ))}
+            </div>
+            <div className="mt-5">
+              <DemoLabel children="Illustrative product capabilities" />
+            </div>
           </div>
         </div>
-        <div className="fade-up" style={{ animationDelay: "0.15s" }}>
-          <ProcurementFlow />
+        <div className="hero-visual">
+          <div className="fade-up" style={{ animationDelay: "0.15s" }}>
+            <ProcurementFlow />
+          </div>
         </div>
       </div>
     </section>
@@ -124,15 +130,23 @@ function Problem() {
     },
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-white md:text-4xl">
+    <section className="mx-auto max-w-7xl px-6 py-20" data-reveal>
+      <h2
+        className="mb-12 text-center text-3xl font-semibold tracking-tight text-white md:text-4xl"
+        data-reveal
+      >
         Supplier decisions shouldn&apos;t live across spreadsheets and inboxes.
       </h2>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {items.map((item) => {
+        {items.map((item, index) => {
           const Icon = item.icon;
           return (
-            <div key={item.t} className="card-surface p-5">
+            <div
+              key={item.t}
+              className="card-surface p-5"
+              data-reveal
+              style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
+            >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
                 <Icon size={18} />
               </span>
@@ -161,7 +175,7 @@ const LOGOS = [
 
 function TrustedBy() {
   return (
-    <section className="relative border-y border-white/5 bg-[#0a1120]/60 py-12">
+    <section className="relative border-y border-white/5 bg-[#0a1120]/60 py-12" data-reveal>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 flex flex-col items-center gap-3 text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50">
@@ -184,6 +198,29 @@ function TrustedBy() {
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ChapterTransition() {
+  return (
+    <section
+      className="scroll-chapter overflow-hidden border-b border-white/5 py-16 md:py-20"
+      aria-label="WasteXa sourcing workflow"
+      data-reveal
+    >
+      <p className="mb-7 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
+        One continuous decision trail
+      </p>
+      <div className="scroll-chapter-track" data-scroll-track>
+        <span>Source</span>
+        <i aria-hidden="true" />
+        <span>Compare</span>
+        <i aria-hidden="true" />
+        <span>Verify</span>
+        <i aria-hidden="true" />
+        <span>Award</span>
       </div>
     </section>
   );
@@ -214,9 +251,9 @@ function Solution() {
     },
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.4fr] lg:items-start">
-        <div>
+    <section className="mx-auto max-w-7xl px-6 py-24">
+      <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-20">
+        <div className="lg:sticky lg:top-32" data-reveal>
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
             The Platform
           </p>
@@ -228,8 +265,8 @@ function Solution() {
             or approval behind the decision.
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {products.map((product) => {
+        <div className="grid gap-5">
+          {products.map((product, index) => {
             const Icon = product.icon;
             const tone =
               product.tone === "primary"
@@ -238,16 +275,29 @@ function Solution() {
                   ? "text-accent border-accent/30 bg-accent/10"
                   : "text-info border-info/30 bg-info/10";
             return (
-              <Link key={product.name} to={product.to} className="card-surface block p-5">
-                <span
-                  className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${tone}`}
-                >
-                  <Icon size={17} />
+              <Link
+                key={product.name}
+                to={product.to}
+                className="card-surface group grid min-h-52 gap-8 p-7 sm:grid-cols-[auto_1fr_auto] sm:items-center"
+                data-reveal
+                style={{ "--reveal-delay": `${index * 80}ms` } as CSSProperties}
+              >
+                <span className="font-mono text-xs text-white/30">0{index + 1}</span>
+                <span>
+                  <span
+                    className={`inline-flex h-10 w-10 items-center justify-center rounded-md border ${tone}`}
+                  >
+                    <Icon size={18} />
+                  </span>
+                  <span className="mt-5 block text-xl font-semibold text-white">
+                    {product.name}
+                  </span>
+                  <span className="mt-2 block max-w-lg text-sm leading-6 text-white/60">
+                    {product.desc}
+                  </span>
                 </span>
-                <h3 className="mt-4 text-base font-semibold text-white">{product.name}</h3>
-                <p className="mt-2 text-xs leading-5 text-white/60">{product.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-xs font-medium text-primary">
-                  Explore <ArrowRight size={12} />
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-primary transition group-hover:border-primary/40 group-hover:bg-primary/10">
+                  <ArrowRight size={16} />
                 </span>
               </Link>
             );
@@ -262,7 +312,7 @@ function Platform() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
       <div className="grid gap-12 lg:grid-cols-[0.78fr_1.62fr] lg:items-start">
-        <div>
+        <div className="lg:sticky lg:top-32" data-reveal>
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
             Platform Overview
           </p>
@@ -277,7 +327,9 @@ function Platform() {
             <LiquidButton to="/request-demo">Discuss a Pilot</LiquidButton>
           </div>
         </div>
-        <ProcurementDashboard />
+        <div data-reveal style={{ "--reveal-delay": "100ms" } as CSSProperties}>
+          <ProcurementDashboard />
+        </div>
       </div>
     </section>
   );
@@ -293,7 +345,7 @@ function Benefits() {
     { icon: Scale, t: "Defensible Awards" },
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16">
+    <section className="mx-auto max-w-7xl px-6 py-16" data-reveal>
       <div className="grid gap-10 lg:grid-cols-[0.7fr_1.6fr] lg:items-center">
         <div>
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
@@ -304,10 +356,15 @@ function Benefits() {
           </h2>
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={item.t} className="card-surface flex flex-col items-center p-5 text-center">
+              <div
+                key={item.t}
+                className="card-surface flex flex-col items-center p-5 text-center"
+                data-reveal
+                style={{ "--reveal-delay": `${index * 55}ms` } as CSSProperties}
+              >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-primary/25 bg-primary/10 text-primary">
                   <Icon size={16} />
                 </span>
@@ -329,7 +386,7 @@ function Stats() {
     ["€1.8M", "Modelled opportunity"],
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12">
+    <section className="mx-auto max-w-7xl px-6 py-12" data-reveal>
       <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-center">
           <div>
@@ -341,8 +398,12 @@ function Stats() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {stats.map(([value, label]) => (
-              <div key={label}>
+            {stats.map(([value, label], index) => (
+              <div
+                key={label}
+                data-reveal
+                style={{ "--reveal-delay": `${index * 65}ms` } as CSSProperties}
+              >
                 <p className="font-mono text-2xl font-semibold text-white md:text-3xl">{value}</p>
                 <p className="mt-1 text-xs text-white/55">{label}</p>
               </div>
@@ -465,8 +526,13 @@ function Testimonials() {
       subtitle="Fictional people and quotes shown only to demonstrate the intended page experience."
     >
       <div className="grid gap-4 md:grid-cols-3">
-        {TESTIMONIALS.map((testimonial) => (
-          <blockquote key={testimonial.name} className="card-surface p-6">
+        {TESTIMONIALS.map((testimonial, index) => (
+          <blockquote
+            key={testimonial.name}
+            className="card-surface p-6"
+            data-reveal
+            style={{ "--reveal-delay": `${index * 75}ms` } as CSSProperties}
+          >
             <p className="text-3xl leading-none text-primary/60">&ldquo;</p>
             <p className="mt-2 text-sm leading-6 text-white/80">{testimonial.quote}</p>
             <footer className="mt-6 border-t border-white/5 pt-4">
@@ -506,7 +572,7 @@ const FAQS = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="mx-auto max-w-7xl px-6 py-20" data-reveal>
       <div className="grid gap-12 lg:grid-cols-[0.7fr_1.4fr] lg:items-start">
         <div>
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
@@ -557,7 +623,7 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20">
+    <section className="mx-auto max-w-7xl px-6 pb-20" data-reveal>
       <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-r from-[#0d1a1a] via-[#0f1f18] to-[#0a1521] p-10 md:p-14">
         <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
         <div className="pointer-events-none absolute -left-16 top-0 h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
