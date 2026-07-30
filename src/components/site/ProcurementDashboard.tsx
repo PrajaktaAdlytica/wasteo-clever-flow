@@ -31,7 +31,7 @@ export function ProcurementDashboard() {
   return (
     <div
       className="glass-strong rounded-2xl p-4 md:p-5"
-      aria-label="Illustrative WasteXa procurement dashboard"
+      aria-label="Illustrative Wastexa procurement dashboard"
     >
       <div className="mb-3 flex items-center justify-between">
         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
@@ -47,7 +47,7 @@ export function ProcurementDashboard() {
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/15 text-primary">
               <Sparkles size={12} />
             </span>
-            <span className="text-xs font-semibold text-white/80">WasteXa</span>
+            <span className="text-xs font-semibold text-white/80">Wastexa</span>
           </div>
           <nav className="space-y-1" aria-label="Illustrative product navigation">
             {nav.map((item) => {

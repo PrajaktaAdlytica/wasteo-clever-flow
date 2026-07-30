@@ -6,10 +6,10 @@ import { Logo } from "@/components/site/Logo";
 export const Route = createFileRoute("/sign-in")({
   head: () => ({
     meta: [
-      { title: "Sign In Demo — WasteXa" },
+      { title: "Sign In Demo — Wastexa" },
       {
         name: "description",
-        content: "Illustrative sign-in screen for the WasteXa sourcing workspace.",
+        content: "Illustrative sign-in screen for the Wastexa sourcing workspace.",
       },
     ],
   }),
@@ -33,7 +33,7 @@ function SignIn() {
         <div className="mt-5 w-full glass-strong rounded-2xl p-8">
           <h1 className="text-2xl font-semibold text-white">Welcome back</h1>
           <p className="mt-1 text-sm text-white/60">
-            Sign in to the illustrative WasteXa sourcing workspace.
+            Sign in to the illustrative Wastexa sourcing workspace.
           </p>
           {done ? (
             <div

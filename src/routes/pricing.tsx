@@ -7,10 +7,10 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Illustrative Pricing — WasteXa" },
+      { title: "Illustrative Pricing — Wastexa" },
       {
         name: "description",
-        content: "Illustrative module-based pricing for the WasteXa procurement product demo.",
+        content: "Illustrative module-based pricing for the Wastexa procurement product demo.",
       },
     ],
   }),

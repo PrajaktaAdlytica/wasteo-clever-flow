@@ -7,11 +7,11 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — WasteXa" },
+      { title: "Products — Wastexa" },
       {
         name: "description",
         content:
-          "WasteXa Find, RFQ and Risk connect supplier discovery, bid comparison and evidence-led risk review.",
+          "Wastexa Find, RFQ and Risk connect supplier discovery, bid comparison and evidence-led risk review.",
       },
     ],
   }),
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/products")({
 const items = [
   {
     slug: "/products/find",
-    name: "WasteXa Find",
+    name: "Wastexa Find",
     icon: Search,
     tag: "Supplier discovery",
     tone: "primary",
@@ -29,7 +29,7 @@ const items = [
   },
   {
     slug: "/products/rfq",
-    name: "WasteXa RFQ",
+    name: "Wastexa RFQ",
     icon: FileCheck2,
     tag: "Comparable sourcing",
     tone: "accent",
@@ -37,7 +37,7 @@ const items = [
   },
   {
     slug: "/products/risk",
-    name: "WasteXa Risk",
+    name: "Wastexa Risk",
     icon: ShieldCheck,
     tag: "Risk & compliance",
     tone: "info",

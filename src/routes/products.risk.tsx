@@ -6,7 +6,7 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/risk")({
   head: () => ({
     meta: [
-      { title: "WasteXa Risk — Supplier risk and compliance review" },
+      { title: "Wastexa Risk — Supplier risk and compliance review" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ function RiskPage() {
     <SiteLayout>
       <ProductTemplate
         tone="info"
-        eyebrow="WasteXa Risk"
+        eyebrow="Wastexa Risk"
         icon={<ShieldCheck size={12} />}
         title="See the evidence behind every supplier-risk signal."
         subtitle="Bring financial, sanctions, operational and compliance evidence into the sourcing decision with visible sources, dates and review status."
@@ -49,7 +49,7 @@ function RiskPage() {
         preview={<RiskPreview />}
         faqs={[
           [
-            "Does WasteXa guarantee compliance?",
+            "Does Wastexa guarantee compliance?",
             "No. The proposed workflow helps teams collect and review evidence; it does not provide legal advice or guarantee compliance.",
           ],
           [

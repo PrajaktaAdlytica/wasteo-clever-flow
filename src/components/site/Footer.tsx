@@ -6,9 +6,9 @@ const cols = [
   {
     title: "Product",
     links: [
-      { to: "/products/find", label: "WasteXa Find" },
-      { to: "/products/rfq", label: "WasteXa RFQ" },
-      { to: "/products/risk", label: "WasteXa Risk" },
+      { to: "/products/find", label: "Wastexa Find" },
+      { to: "/products/rfq", label: "Wastexa RFQ" },
+      { to: "/products/risk", label: "Wastexa Risk" },
       { to: "/products", label: "Platform" },
     ],
   },
@@ -91,7 +91,7 @@ export function Footer() {
               Contact
             </p>
             <div className="mt-4 space-y-1.5 text-sm text-white/70">
-              <p className="text-white/90">WasteXa Sp. z o.o.</p>
+              <p className="text-white/90">Wastexa Sp. z o.o.</p>
               <p>Prosta 70</p>
               <p>00-838 Warsaw</p>
               <p>Poland</p>
@@ -105,7 +105,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} WasteXa. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Wastexa. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/about" className="hover:text-white/70">
               Privacy Policy (demo)

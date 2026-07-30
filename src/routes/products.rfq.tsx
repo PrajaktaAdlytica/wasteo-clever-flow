@@ -6,7 +6,7 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/rfq")({
   head: () => ({
     meta: [
-      { title: "WasteXa RFQ — Comparable supplier offers" },
+      { title: "Wastexa RFQ — Comparable supplier offers" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ function RfqPage() {
     <SiteLayout>
       <ProductTemplate
         tone="accent"
-        eyebrow="WasteXa RFQ"
+        eyebrow="Wastexa RFQ"
         icon={<FileCheck2 size={12} />}
         title="Collect comparable offers without rebuilding another spreadsheet."
         subtitle="Create a structured sourcing event, invite suppliers, manage clarifications and compare price, terms, capacity and evidence side by side."

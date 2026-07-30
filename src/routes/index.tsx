@@ -21,6 +21,7 @@ import { Section } from "@/components/site/Section";
 import { LiquidButton } from "@/components/site/LiquidButton";
 import { ProcurementFlow } from "@/components/site/ProcurementFlow";
 import { ProcurementDashboard } from "@/components/site/ProcurementDashboard";
+import { EntryExperience } from "@/components/site/EntryExperience";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <SiteLayout>
+      <EntryExperience />
       <Hero />
       <Problem />
       <TrustedBy />
@@ -56,7 +58,7 @@ function DemoLabel({ children = "Illustrative demo content" }: { children?: stri
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="main-product-story" className="relative scroll-mt-16 overflow-hidden">
       <div className="hero-grid absolute inset-0 -z-10 grid-bg opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[600px] bg-gradient-to-b from-primary/[0.06] to-transparent" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-20 lg:grid-cols-[1.05fr_0.9fr] lg:pt-24">
@@ -207,7 +209,7 @@ function ChapterTransition() {
   return (
     <section
       className="scroll-chapter overflow-hidden border-b border-white/5 py-16 md:py-20"
-      aria-label="WasteXa sourcing workflow"
+      aria-label="Wastexa sourcing workflow"
       data-reveal
     >
       <p className="mb-7 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
@@ -229,21 +231,21 @@ function ChapterTransition() {
 function Solution() {
   const products = [
     {
-      name: "WasteXa Find",
+      name: "Wastexa Find",
       icon: Search,
       desc: "Build evidence-backed supplier shortlists by capability, location and fit.",
       tone: "primary",
       to: "/products/find",
     },
     {
-      name: "WasteXa RFQ",
+      name: "Wastexa RFQ",
       icon: FileCheck2,
       desc: "Collect, normalise and compare supplier responses in one workspace.",
       tone: "accent",
       to: "/products/rfq",
     },
     {
-      name: "WasteXa Risk",
+      name: "Wastexa Risk",
       icon: ShieldCheck,
       desc: "Review risk signals, documents and freshness before award.",
       tone: "info",
@@ -500,7 +502,7 @@ function Pricing() {
 const TESTIMONIALS = [
   {
     quote:
-      "WasteXa pozwoliła nam porównać dostawców na podstawie tych samych kryteriów, bez kolejnego arkusza.",
+      "Wastexa pozwoliła nam porównać dostawców na podstawie tych samych kryteriów, bez kolejnego arkusza.",
     name: "Jan Kowalski",
     role: "Illustrative Procurement Director, ORLEN",
   },
@@ -548,8 +550,8 @@ function Testimonials() {
 
 const FAQS = [
   [
-    "What is WasteXa?",
-    "WasteXa is an illustrative supplier intelligence and sourcing workspace for European procurement teams. This website demonstrates the intended product experience.",
+    "What is Wastexa?",
+    "Wastexa is an illustrative supplier intelligence and sourcing workspace for European procurement teams. This website demonstrates the intended product experience.",
   ],
   [
     "How does supplier matching work?",

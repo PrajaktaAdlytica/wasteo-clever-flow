@@ -6,11 +6,11 @@ import { Section } from "@/components/site/Section";
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — WasteXa" },
+      { title: "Resources — Wastexa" },
       {
         name: "description",
         content:
-          "Illustrative documentation, sourcing guides, case studies and product resources from WasteXa.",
+          "Illustrative documentation, sourcing guides, case studies and product resources from Wastexa.",
       },
     ],
   }),

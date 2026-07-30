@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const TITLE = "WasteXa — Supplier Intelligence & Sourcing";
+const TITLE = "Wastexa — Supplier Intelligence & Sourcing";
 const DESC =
   "Find qualified suppliers, compare bids and act on risk in one auditable sourcing workspace for European procurement teams.";
 
@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "author", content: "WasteXa" },
+      { name: "author", content: "Wastexa" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },

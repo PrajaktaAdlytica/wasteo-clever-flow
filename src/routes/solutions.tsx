@@ -7,7 +7,7 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solutions — WasteXa" },
+      { title: "Solutions — Wastexa" },
       {
         name: "description",
         content:
@@ -57,10 +57,10 @@ function Solutions() {
       <Section
         eyebrow="Solutions"
         title="One supplier workspace. Different decision contexts."
-        subtitle="WasteXa connects the people who discover, qualify, compare and approve suppliers—without pretending every team uses the same workflow."
+        subtitle="Wastexa connects the people who discover, qualify, compare and approve suppliers—without pretending every team uses the same workflow."
       >
         <div className="mb-6 rounded-xl border border-primary/15 bg-primary/[0.06] px-4 py-3 text-xs text-white/65">
-          Illustrative use cases for the WasteXa product concept.
+          Illustrative use cases for the Wastexa product concept.
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => {

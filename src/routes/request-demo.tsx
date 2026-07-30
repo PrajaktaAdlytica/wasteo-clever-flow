@@ -7,11 +7,11 @@ import { Section } from "@/components/site/Section";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Explore the Demo — WasteXa" },
+      { title: "Explore the Demo — Wastexa" },
       {
         name: "description",
         content:
-          "Explore an illustrative WasteXa supplier discovery, RFQ and risk-review workflow.",
+          "Explore an illustrative Wastexa supplier discovery, RFQ and risk-review workflow.",
       },
     ],
   }),
@@ -26,7 +26,7 @@ function RequestDemo() {
     <SiteLayout>
       <Section
         eyebrow="Interactive Demo"
-        title="See WasteXa on your supplier workflow."
+        title="See Wastexa on your supplier workflow."
         subtitle="Explore Find, RFQ and Risk through a realistic—but fully illustrative—European sourcing scenario."
       >
         <div className="mb-8 flex items-start gap-3 rounded-xl border border-primary/15 bg-primary/[0.06] px-5 py-4 text-sm leading-6 text-white/70">
@@ -62,7 +62,7 @@ function RequestDemo() {
             ))}
             <blockquote className="card-surface p-5">
               <p className="text-sm italic leading-6 text-white/80">
-                &ldquo;WasteXa pokazuje, jak połączyć discovery, RFQ i risk review w jednym procesie
+                &ldquo;Wastexa pokazuje, jak połączyć discovery, RFQ i risk review w jednym procesie
                 decyzyjnym.&rdquo;
               </p>
               <footer className="mt-4">

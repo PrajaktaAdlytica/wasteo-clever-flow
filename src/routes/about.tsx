@@ -6,11 +6,11 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — WasteXa" },
+      { title: "About — Wastexa" },
       {
         name: "description",
         content:
-          "WasteXa is an illustrative Warsaw-based supplier intelligence and sourcing product concept.",
+          "Wastexa is an illustrative Warsaw-based supplier intelligence and sourcing product concept.",
       },
     ],
   }),
@@ -23,7 +23,7 @@ function About() {
       <Section
         eyebrow="Illustrative Company Profile"
         title="Designed in Warsaw for European supplier decisions."
-        subtitle="WasteXa is a demo-stage supplier intelligence and sourcing concept for procurement teams, manufacturers, retailers and supply-chain managers."
+        subtitle="Wastexa is a demo-stage supplier intelligence and sourcing concept for procurement teams, manufacturers, retailers and supply-chain managers."
       >
         <div className="mb-8 rounded-xl border border-primary/15 bg-primary/[0.06] px-5 py-4 text-sm leading-6 text-white/70">
           This is an illustrative company profile. The legal entity, founding year, team size,
@@ -46,10 +46,10 @@ function About() {
           <div className="grid gap-6 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="text-2xl font-semibold text-white">
-                Explore the WasteXa product concept.
+                Explore the Wastexa product concept.
               </h2>
               <p className="mt-2 text-sm text-white/60">
-                WasteXa Sp. z o.o. · Prosta 70, 00-838 Warsaw · Poland
+                Wastexa Sp. z o.o. · Prosta 70, 00-838 Warsaw · Poland
               </p>
               <p className="mt-1 text-xs text-white/40">Illustrative company and contact details</p>
             </div>

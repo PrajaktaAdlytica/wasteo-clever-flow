@@ -4,9 +4,9 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const products = [
-  { to: "/products/find", label: "WasteXa Find", desc: "Discover qualified suppliers." },
-  { to: "/products/rfq", label: "WasteXa RFQ", desc: "Collect comparable offers." },
-  { to: "/products/risk", label: "WasteXa Risk", desc: "Review risk and compliance." },
+  { to: "/products/find", label: "Wastexa Find", desc: "Discover qualified suppliers." },
+  { to: "/products/rfq", label: "Wastexa RFQ", desc: "Collect comparable offers." },
+  { to: "/products/risk", label: "Wastexa Risk", desc: "Review risk and compliance." },
 ];
 
 const nav = [
@@ -46,7 +46,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2" aria-label="WasteXa home">
+        <Link to="/" className="flex items-center gap-2" aria-label="Wastexa home">
           <Logo className="h-7" />
         </Link>
         <nav className="hidden items-center gap-7 md:flex">

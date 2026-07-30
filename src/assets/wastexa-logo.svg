@@ -1,4 +1,4 @@
-<svg width="760" height="180" viewBox="0 0 760 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WasteXa logo option C">
+<svg width="760" height="180" viewBox="0 0 760 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wastexa logo option C">
   <defs>
     <linearGradient id="cGreen" x1="44" y1="40" x2="136" y2="136" gradientUnits="userSpaceOnUse">
       <stop stop-color="#84CC16"/>
@@ -13,5 +13,5 @@
   <path d="M68 114L112 70" stroke="url(#cGreen)" stroke-width="12" stroke-linecap="round"/>
   <path d="M68 70L112 114" stroke="#F97316" stroke-width="12" stroke-linecap="round"/>
   <circle cx="90" cy="92" r="11" fill="#0B1220" stroke="#F8FAFC" stroke-width="6"/>
-  <text x="196" y="113" fill="#F8FAFC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="78" font-weight="760">WasteXa</text>
+  <text x="196" y="113" fill="#F8FAFC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="78" font-weight="760">Wastexa</text>
 </svg>

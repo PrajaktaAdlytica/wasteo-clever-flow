@@ -6,7 +6,7 @@ import { ProductTemplate } from "@/components/site/ProductTemplate";
 export const Route = createFileRoute("/products/find")({
   head: () => ({
     meta: [
-      { title: "WasteXa Find — Supplier discovery" },
+      { title: "Wastexa Find — Supplier discovery" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ function FindPage() {
     <SiteLayout>
       <ProductTemplate
         tone="primary"
-        eyebrow="WasteXa Find"
+        eyebrow="Wastexa Find"
         icon={<Search size={12} />}
         title="Build a supplier shortlist with evidence, not browser tabs."
         subtitle="Translate a sourcing requirement into a focused supplier search, inspect why each supplier matched and move the strongest candidates directly into an RFQ."
