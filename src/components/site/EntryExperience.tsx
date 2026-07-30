@@ -245,7 +245,8 @@ export function EntryExperience() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => selectScene(index)}
-                  className={`group relative flex min-h-12 items-center gap-2 border-b text-left transition md:min-h-14 ${
+                  onMouseDown={(event) => event.preventDefault()}
+                  className={`group relative flex min-h-12 items-center gap-2 border-b text-left transition focus-visible:outline-1 focus-visible:outline-offset-[-2px] md:min-h-14 ${
                     isActive
                       ? "border-primary text-white"
                       : "border-white/18 text-white/48 hover:border-white/45 hover:text-white/78"
