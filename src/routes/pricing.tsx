@@ -7,10 +7,11 @@ import { LiquidButton } from "@/components/site/LiquidButton";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — WasteXa" },
-      { name: "description", content: "Simple per-site pricing for WasteXa Track, Cost and Sort. Enterprise volume pricing available." },
-      { property: "og:title", content: "Pricing — WasteXa" },
-      { property: "og:description", content: "Simple per-site pricing." },
+      { title: "Illustrative Pricing — WasteXa" },
+      {
+        name: "description",
+        content: "Illustrative module-based pricing for the WasteXa procurement product demo.",
+      },
     ],
   }),
   component: PricingPage,
@@ -18,64 +19,119 @@ export const Route = createFileRoute("/pricing")({
 
 const plans = [
   {
-    n: "Track", tone: "primary", price: "€1,500", per: "/site/month",
-    desc: "Monitor waste generation across every facility.",
-    f: ["Real-time waste tracking", "Site-level dashboards", "Weighbridge integrations", "5 operators", "Email support"],
+    n: "Find",
+    tone: "primary",
+    price: "€1,500",
+    per: "/workspace/month",
+    desc: "Supplier discovery and shortlisting.",
+    f: [
+      "Supplier search",
+      "Match explanations",
+      "Saved shortlists",
+      "CSV import/export",
+      "Email support",
+    ],
   },
   {
-    n: "Cost", tone: "accent", price: "€1,800", per: "/site/month",
-    desc: "Understand disposal costs and identify savings.",
-    f: ["Cost analytics", "Vendor benchmarking", "Savings recommendations", "Unlimited operators", "Priority support"], featured: true,
+    n: "RFQ",
+    tone: "accent",
+    price: "€1,800",
+    per: "/workspace/month",
+    desc: "Structured RFQs and bid comparison.",
+    f: [
+      "RFQ templates",
+      "Supplier response links",
+      "Bid normalisation",
+      "Comparison workspace",
+      "Priority support",
+    ],
+    featured: true,
   },
   {
-    n: "Sort", tone: "info", price: "€2,200", per: "/site/month",
-    desc: "Automatically classify waste streams using AI.",
-    f: ["AI computer vision", "Contamination detection", "Recovery optimisation", "Custom material models", "24/7 support"],
+    n: "Risk",
+    tone: "info",
+    price: "€2,200",
+    per: "/workspace/month",
+    desc: "Risk signals and document review.",
+    f: ["Risk evidence", "Document expiry", "Review workflow", "Alerts", "Priority support"],
   },
   {
-    n: "Enterprise", tone: "white", price: "Custom", per: "Volume pricing available",
-    desc: "For operators with complex, multi-country operations.",
-    f: ["All modules included", "On-prem / air-gapped", "Custom integrations", "Named account team", "SLA + on-call"],
+    n: "Platform",
+    tone: "white",
+    price: "Custom",
+    per: "Illustrative enterprise packaging",
+    desc: "Connected sourcing for larger teams.",
+    f: [
+      "All products",
+      "Workflow configuration",
+      "Example integrations",
+      "Named pilot lead",
+      "Illustrative SLA",
+    ],
   },
 ];
 
 function PricingPage() {
   return (
     <SiteLayout>
-      <Section eyebrow="Pricing" title="Transparent. Per site. European." subtitle="No PDFs. No games. Prices you can put into procurement today.">
+      <Section
+        eyebrow="Illustrative Pricing"
+        title="Simple module-based packaging."
+        subtitle="All prices and package details are fictional examples—not a commercial offer."
+      >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {plans.map((p) => {
+          {plans.map((plan) => {
             const border =
-              p.tone === "primary" ? "border-l-primary" :
-              p.tone === "accent" ? "border-l-accent" :
-              p.tone === "info" ? "border-l-info" :
-              "border-l-white/25";
+              plan.tone === "primary"
+                ? "border-l-primary"
+                : plan.tone === "accent"
+                  ? "border-l-accent"
+                  : plan.tone === "info"
+                    ? "border-l-info"
+                    : "border-l-white/25";
             const text =
-              p.tone === "primary" ? "text-primary" :
-              p.tone === "accent" ? "text-accent" :
-              p.tone === "info" ? "text-info" :
-              "text-white";
+              plan.tone === "primary"
+                ? "text-primary"
+                : plan.tone === "accent"
+                  ? "text-accent"
+                  : plan.tone === "info"
+                    ? "text-info"
+                    : "text-white";
             return (
-              <div key={p.n} className={`card-surface flex flex-col p-6 border-l-2 ${border} ${p.featured ? "ring-1 ring-accent/40" : ""}`}>
+              <div
+                key={plan.n}
+                className={`card-surface flex flex-col border-l-2 p-6 ${border} ${plan.featured ? "ring-1 ring-accent/40" : ""}`}
+              >
                 <div className="flex items-center justify-between">
-                  <p className={`text-sm font-semibold ${text}`}>{p.n}</p>
-                  {p.featured && <span className="rounded-full border border-accent/30 bg-accent/10 px-2 py-0.5 text-[9px] font-semibold uppercase text-accent">Popular</span>}
+                  <p className={`text-sm font-semibold ${text}`}>{plan.n}</p>
+                  {plan.featured && (
+                    <span className="rounded-full border border-accent/30 bg-accent/10 px-2 py-0.5 text-[9px] font-semibold uppercase text-accent">
+                      Example
+                    </span>
+                  )}
                 </div>
-                <p className="mt-2 text-xs text-white/60">{p.desc}</p>
+                <p className="mt-2 text-xs text-white/60">{plan.desc}</p>
                 <p className="mt-5 font-mono text-3xl font-semibold text-white">
-                  {p.price}{p.price.startsWith("€") && <span className="ml-1 text-sm font-normal text-white/50">{p.per}</span>}
+                  {plan.price}
+                  {plan.price.startsWith("€") && (
+                    <span className="ml-1 text-sm font-normal text-white/50">{plan.per}</span>
+                  )}
                 </p>
-                {!p.price.startsWith("€") && <p className="text-[11px] text-white/50">{p.per}</p>}
-                {p.price.startsWith("€") && <p className="text-[11px] text-white/50">Billed annually</p>}
+                {!plan.price.startsWith("€") && (
+                  <p className="text-[11px] text-white/50">{plan.per}</p>
+                )}
+                {plan.price.startsWith("€") && (
+                  <p className="text-[11px] text-white/50">Illustrative annual billing</p>
+                )}
                 <ul className="mt-5 flex-1 space-y-2">
-                  {p.f.map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-xs text-white/75">
-                      <CheckCircle2 size={13} className={`mt-0.5 ${text}`} /> {x}
+                  {plan.f.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-xs text-white/75">
+                      <CheckCircle2 size={13} className={`mt-0.5 ${text}`} /> {feature}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <LiquidButton to="/request-demo">Request Demo</LiquidButton>
+                  <LiquidButton to="/request-demo">Discuss a Pilot</LiquidButton>
                 </div>
               </div>
             );

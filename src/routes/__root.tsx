@@ -12,8 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const TITLE = "WasteXa — AI Waste Intelligence Platform";
-const DESC = "WasteXa turns industrial waste into measurable value — track waste streams, understand disposal costs and optimise recycling performance from one intelligent operational platform.";
+const TITLE = "WasteXa — Supplier Intelligence & Sourcing";
+const DESC =
+  "Find qualified suppliers, compare bids and act on risk in one auditable sourcing workspace for European procurement teams.";
 
 function NotFoundComponent() {
   return (
@@ -23,7 +24,9 @@ function NotFoundComponent() {
         <h2 className="mt-4 text-xl font-semibold text-white">Page not found</h2>
         <p className="mt-2 text-sm text-white/60">The page you're looking for doesn't exist.</p>
         <div className="mt-6">
-          <Link to="/" className="liquid-btn">Go home</Link>
+          <Link to="/" className="liquid-btn">
+            Go home
+          </Link>
         </div>
       </div>
     </div>
@@ -33,15 +36,29 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => { reportLovableError(error, { boundary: "tanstack_root_error_component" }); }, [error]);
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-app px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-white">This page didn't load</h1>
-        <p className="mt-2 text-sm text-white/60">Something went wrong. Try refreshing or head home.</p>
+        <p className="mt-2 text-sm text-white/60">
+          Something went wrong. Try refreshing or head home.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button onClick={() => { router.invalidate(); reset(); }} className="liquid-btn">Try again</button>
-          <a href="/" className="btn-ghost">Go home</a>
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="liquid-btn"
+          >
+            Try again
+          </button>
+          <a href="/" className="btn-ghost">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -62,12 +79,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { title: "wastexa" },
-      { property: "og:title", content: "wastexa" },
-      { name: "twitter:title", content: "wastexa" },
-      { name: "description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
-      { property: "og:description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
-      { name: "twitter:description", content: "WasteXa Intelligence Hub: AI platform for industrial waste tracking, cost analysis, and recycling optimization." },
       { property: "og:image", content: "https://wastexa.com/wastexa-favicon.svg?v=wastexa-c" },
       { name: "twitter:image", content: "https://wastexa.com/wastexa-favicon.svg?v=wastexa-c" },
     ],
@@ -78,7 +89,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=wastexa-c" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -90,8 +104,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head><HeadContent /></head>
-      <body>{children}<Scripts /></body>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
     </html>
   );
 }

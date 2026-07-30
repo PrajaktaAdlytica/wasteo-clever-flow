@@ -9,46 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SolutionsRouteImport } from './routes/solutions'
-import { Route as SignInRouteImport } from './routes/sign-in'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as RequestDemoRouteImport } from './routes/request-demo'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProductsTrackRouteImport } from './routes/products.track'
-import { Route as ProductsSortRouteImport } from './routes/products.sort'
-import { Route as ProductsCostRouteImport } from './routes/products.cost'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as ProductsFindRouteImport } from './routes/products.find'
+import { Route as ProductsRfqRouteImport } from './routes/products.rfq'
+import { Route as ProductsRiskRouteImport } from './routes/products.risk'
 
-const SolutionsRoute = SolutionsRouteImport.update({
-  id: '/solutions',
-  path: '/solutions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignInRoute = SignInRouteImport.update({
-  id: '/sign-in',
-  path: '/sign-in',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RequestDemoRoute = RequestDemoRouteImport.update({
-  id: '/request-demo',
-  path: '/request-demo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -56,24 +31,49 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsTrackRoute = ProductsTrackRouteImport.update({
-  id: '/track',
-  path: '/track',
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsFindRoute = ProductsFindRouteImport.update({
+  id: '/find',
+  path: '/find',
   getParentRoute: () => ProductsRoute,
 } as any)
-const ProductsSortRoute = ProductsSortRouteImport.update({
-  id: '/sort',
-  path: '/sort',
+const ProductsRfqRoute = ProductsRfqRouteImport.update({
+  id: '/rfq',
+  path: '/rfq',
   getParentRoute: () => ProductsRoute,
 } as any)
-const ProductsCostRoute = ProductsCostRouteImport.update({
-  id: '/cost',
-  path: '/cost',
+const ProductsRiskRoute = ProductsRiskRouteImport.update({
+  id: '/risk',
+  path: '/risk',
   getParentRoute: () => ProductsRoute,
 } as any)
 
@@ -86,9 +86,9 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
-  '/products/cost': typeof ProductsCostRoute
-  '/products/sort': typeof ProductsSortRoute
-  '/products/track': typeof ProductsTrackRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -99,9 +99,9 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
-  '/products/cost': typeof ProductsCostRoute
-  '/products/sort': typeof ProductsSortRoute
-  '/products/track': typeof ProductsTrackRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -113,9 +113,9 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
-  '/products/cost': typeof ProductsCostRoute
-  '/products/sort': typeof ProductsSortRoute
-  '/products/track': typeof ProductsTrackRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -128,9 +128,9 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
-    | '/products/cost'
-    | '/products/sort'
-    | '/products/track'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -141,9 +141,9 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
-    | '/products/cost'
-    | '/products/sort'
-    | '/products/track'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
   id:
     | '__root__'
     | '/'
@@ -154,9 +154,9 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
-    | '/products/cost'
-    | '/products/sort'
-    | '/products/track'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -172,46 +172,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/solutions': {
-      id: '/solutions'
-      path: '/solutions'
-      fullPath: '/solutions'
-      preLoaderRoute: typeof SolutionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sign-in': {
-      id: '/sign-in'
-      path: '/sign-in'
-      fullPath: '/sign-in'
-      preLoaderRoute: typeof SignInRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/request-demo': {
-      id: '/request-demo'
-      path: '/request-demo'
-      fullPath: '/request-demo'
-      preLoaderRoute: typeof RequestDemoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -221,47 +186,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products/track': {
-      id: '/products/track'
-      path: '/track'
-      fullPath: '/products/track'
-      preLoaderRoute: typeof ProductsTrackRouteImport
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/find': {
+      id: '/products/find'
+      path: '/find'
+      fullPath: '/products/find'
+      preLoaderRoute: typeof ProductsFindRouteImport
       parentRoute: typeof ProductsRoute
     }
-    '/products/sort': {
-      id: '/products/sort'
-      path: '/sort'
-      fullPath: '/products/sort'
-      preLoaderRoute: typeof ProductsSortRouteImport
+    '/products/rfq': {
+      id: '/products/rfq'
+      path: '/rfq'
+      fullPath: '/products/rfq'
+      preLoaderRoute: typeof ProductsRfqRouteImport
       parentRoute: typeof ProductsRoute
     }
-    '/products/cost': {
-      id: '/products/cost'
-      path: '/cost'
-      fullPath: '/products/cost'
-      preLoaderRoute: typeof ProductsCostRouteImport
+    '/products/risk': {
+      id: '/products/risk'
+      path: '/risk'
+      fullPath: '/products/risk'
+      preLoaderRoute: typeof ProductsRiskRouteImport
       parentRoute: typeof ProductsRoute
     }
   }
 }
 
 interface ProductsRouteChildren {
-  ProductsCostRoute: typeof ProductsCostRoute
-  ProductsSortRoute: typeof ProductsSortRoute
-  ProductsTrackRoute: typeof ProductsTrackRoute
+  ProductsFindRoute: typeof ProductsFindRoute
+  ProductsRfqRoute: typeof ProductsRfqRoute
+  ProductsRiskRoute: typeof ProductsRiskRoute
 }
 
 const ProductsRouteChildren: ProductsRouteChildren = {
-  ProductsCostRoute: ProductsCostRoute,
-  ProductsSortRoute: ProductsSortRoute,
-  ProductsTrackRoute: ProductsTrackRoute,
+  ProductsFindRoute: ProductsFindRoute,
+  ProductsRfqRoute: ProductsRfqRoute,
+  ProductsRiskRoute: ProductsRiskRoute,
 }
 
 const ProductsRouteWithChildren = ProductsRoute._addFileChildren(

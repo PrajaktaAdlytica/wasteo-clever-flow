@@ -29,19 +29,26 @@ export function ProductTemplate({
 }) {
   const [open, setOpen] = useState<number | null>(0);
   const toneBadge =
-    tone === "primary" ? "text-primary border-primary/25 bg-primary/10" :
-    tone === "accent" ? "text-accent border-accent/25 bg-accent/10" :
-    "text-info border-info/25 bg-info/10";
+    tone === "primary"
+      ? "text-primary border-primary/25 bg-primary/10"
+      : tone === "accent"
+        ? "text-accent border-accent/25 bg-accent/10"
+        : "text-info border-info/25 bg-info/10";
   return (
     <>
       {/* Hero */}
       <Section>
-        <Link to="/products" className="mb-6 inline-flex items-center gap-1 text-sm text-white/60 hover:text-white">
+        <Link
+          to="/products"
+          className="mb-6 inline-flex items-center gap-1 text-sm text-white/60 hover:text-white"
+        >
           <ArrowLeft size={14} /> All products
         </Link>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-widest ${toneBadge}`}>
+            <div
+              className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-widest ${toneBadge}`}
+            >
               <span className="inline-flex h-4 w-4 items-center justify-center">{icon}</span>
               {eyebrow}
             </div>
@@ -49,17 +56,25 @@ export function ProductTemplate({
               {title}
             </h1>
             <p className="mt-5 max-w-lg text-white/60">{subtitle}</p>
+            <p className="mt-4 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/45">
+              Illustrative product capability
+            </p>
             <ul className="mt-8 space-y-3">
               {bullets.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-sm text-white/80">
-                  <CheckCircle2 size={16} className={`mt-0.5 ${tone === "primary" ? "text-primary" : tone === "accent" ? "text-accent" : "text-info"}`} />
+                  <CheckCircle2
+                    size={16}
+                    className={`mt-0.5 ${tone === "primary" ? "text-primary" : tone === "accent" ? "text-accent" : "text-info"}`}
+                  />
                   <span>{b}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-10 flex gap-3">
-              <LiquidButton to="/request-demo">Request Demo</LiquidButton>
-              <Link to="/products" className="btn-ghost">Compare products</Link>
+              <LiquidButton to="/request-demo">Discuss a Pilot</LiquidButton>
+              <Link to="/products" className="btn-ghost">
+                Compare products
+              </Link>
             </div>
           </div>
           <div className="glass-strong rounded-2xl p-5">{preview}</div>
@@ -67,12 +82,16 @@ export function ProductTemplate({
       </Section>
 
       {/* Dashboard preview strip */}
-      <Section eyebrow="Dashboard Preview" title="A realistic operational surface.">
+      <Section
+        eyebrow="Illustrative Product Preview"
+        title="See the proposed workflow in context."
+        subtitle="All suppliers, scores, documents and recommendations shown are fictional demo data."
+      >
         <div className="glass-strong rounded-2xl p-5">{preview}</div>
       </Section>
 
       {/* Features / Benefits */}
-      <Section eyebrow="Benefits" title="Built for measurable outcomes.">
+      <Section eyebrow="Benefits" title="Built for explainable supplier decisions.">
         <div className="grid gap-5 md:grid-cols-3">
           {benefits.map((b) => (
             <div key={b.t} className="card-surface p-6">
@@ -89,12 +108,21 @@ export function ProductTemplate({
           {faqs.map(([q, a], i) => {
             const isOpen = open === i;
             return (
-              <button key={q} onClick={() => setOpen(isOpen ? null : i)} className="block w-full px-6 py-5 text-left">
+              <button
+                key={q}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className="block w-full px-6 py-5 text-left"
+              >
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-base font-medium text-white">{q}</span>
-                  <ChevronDown size={18} className={`text-white/50 transition ${isOpen ? "rotate-180 text-primary" : ""}`} />
+                  <ChevronDown
+                    size={18}
+                    className={`text-white/50 transition ${isOpen ? "rotate-180 text-primary" : ""}`}
+                  />
                 </div>
-                <div className={`grid transition-all duration-300 ${isOpen ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div
+                  className={`grid transition-all duration-300 ${isOpen ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
                   <div className="overflow-hidden">
                     <p className="text-sm text-white/60">{a}</p>
                   </div>
@@ -111,9 +139,9 @@ export function ProductTemplate({
           <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-              Ready to see it on your waste data?
+              Ready to explore your supplier workflow?
             </h2>
-            <LiquidButton to="/request-demo">Request Demo</LiquidButton>
+            <LiquidButton to="/request-demo">Discuss a Pilot</LiquidButton>
           </div>
         </div>
       </section>

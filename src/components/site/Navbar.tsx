@@ -4,9 +4,9 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const products = [
-  { to: "/products/track", label: "WasteXa Track", desc: "Monitor waste generation." },
-  { to: "/products/cost", label: "WasteXa Cost", desc: "Analyse disposal costs." },
-  { to: "/products/sort", label: "WasteXa Sort", desc: "AI waste classification." },
+  { to: "/products/find", label: "WasteXa Find", desc: "Discover qualified suppliers." },
+  { to: "/products/rfq", label: "WasteXa RFQ", desc: "Collect comparable offers." },
+  { to: "/products/risk", label: "WasteXa Risk", desc: "Review risk and compliance." },
 ];
 
 const nav = [
@@ -26,6 +26,19 @@ export function Navbar() {
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
   }, []);
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -33,7 +46,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2" aria-label="WasteXa home">
           <Logo className="h-7" />
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
@@ -42,7 +55,11 @@ export function Navbar() {
             onMouseEnter={() => setProdOpen(true)}
             onMouseLeave={() => setProdOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm text-white/75 transition hover:text-white">
+            <button
+              className="flex items-center gap-1 text-sm text-white/75 transition hover:text-white"
+              aria-expanded={prodOpen}
+              aria-haspopup="menu"
+            >
               Product <ChevronDown size={14} />
             </button>
             {prodOpen && (
@@ -74,41 +91,64 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            to="/sign-in"
-            className="text-sm text-white/75 transition hover:text-white"
-          >
+          <Link to="/sign-in" className="text-sm text-white/75 transition hover:text-white">
             Sign In
           </Link>
-          <Link
-            to="/request-demo"
-            className="liquid-btn"
-          >
+          <Link to="/request-demo" className="liquid-btn">
             Request Demo
           </Link>
         </div>
         <button
-          className="md:hidden text-white/80"
+          className="rounded-md p-2 text-white/80 transition hover:bg-white/5 hover:text-white md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-white/5 bg-[#0B1220]/95 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
+        <div
+          id="mobile-navigation"
+          className="fixed inset-x-0 bottom-0 top-16 overflow-y-auto border-t border-white/10 bg-[#08101d]/[0.98] shadow-2xl backdrop-blur-2xl md:hidden"
+        >
+          <nav
+            className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-6"
+            aria-label="Mobile navigation"
+          >
             {products.map((p) => (
-              <Link key={p.to} to={p.to} onClick={() => setOpen(false)} className="rounded px-2 py-2 text-sm text-white/80 hover:bg-white/5">{p.label}</Link>
+              <Link
+                key={p.to}
+                to={p.to}
+                onClick={() => setOpen(false)}
+                className="rounded px-2 py-2 text-sm text-white/80 hover:bg-white/5"
+              >
+                {p.label}
+              </Link>
             ))}
             {nav.map((n) => (
-              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="rounded px-2 py-2 text-sm text-white/80 hover:bg-white/5">{n.label}</Link>
+              <Link
+                key={n.to}
+                to={n.to}
+                onClick={() => setOpen(false)}
+                className="rounded px-2 py-2 text-sm text-white/80 hover:bg-white/5"
+              >
+                {n.label}
+              </Link>
             ))}
             <div className="mt-2 flex gap-2">
-              <Link to="/sign-in" onClick={() => setOpen(false)} className="flex-1 btn-ghost">Sign In</Link>
-              <Link to="/request-demo" onClick={() => setOpen(false)} className="flex-1 liquid-btn">Request Demo</Link>
+              <Link to="/sign-in" onClick={() => setOpen(false)} className="flex-1 btn-ghost">
+                Sign In
+              </Link>
+              <Link to="/request-demo" onClick={() => setOpen(false)} className="flex-1 liquid-btn">
+                Request Demo
+              </Link>
             </div>
-          </div>
+            <p className="mt-6 border-t border-white/8 pt-5 text-xs leading-5 text-white/45">
+              Illustrative demo website. All company and product data is fictional.
+            </p>
+          </nav>
         </div>
       )}
     </header>
