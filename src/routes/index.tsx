@@ -37,6 +37,7 @@ function HomePage() {
       <ChapterTransition />
       <Solution />
       <Platform />
+      <FundingAnnouncement />
       <Benefits />
       <Stats />
       <Pricing />
@@ -331,6 +332,46 @@ function Platform() {
         </div>
         <div data-reveal style={{ "--reveal-delay": "100ms" } as CSSProperties}>
           <ProcurementDashboard />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FundingAnnouncement() {
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16" data-reveal>
+      <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-[#0b1622] px-6 py-8 md:px-10 md:py-10">
+        <div className="pointer-events-none absolute -right-24 -top-32 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="relative grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:items-end">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+              Funding announcement
+            </p>
+            <p className="mt-3 font-mono text-xs text-white/55">Jul 2, 2026</p>
+          </div>
+          <div>
+            <h2 className="max-w-3xl text-2xl font-semibold tracking-tight text-white md:text-4xl md:leading-tight">
+              Wastexa secures $505K in funding from Dlabs.
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/65 md:text-base md:leading-7">
+              Wastexa is part of Dlabs’ global portfolio of companies building circular operations
+              for complex operating environments.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href="https://d-labs-site.vercel.app/companies"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="liquid-btn"
+              >
+                View Dlabs portfolio <ArrowRight size={16} />
+              </a>
+              <Link to="/news/funding-announcement" className="btn-ghost">
+                Read announcement <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

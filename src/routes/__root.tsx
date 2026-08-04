@@ -119,6 +119,21 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Wastexa",
+            url: "https://wastexa.com",
+            sameAs: [
+              "https://www.linkedin.com/company/wastexa/",
+              "https://www.crunchbase.com/organization/wastexa",
+            ],
+          }),
+        }}
+      />
       <Outlet />
     </QueryClientProvider>
   );

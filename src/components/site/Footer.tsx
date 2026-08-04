@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Twitter, Youtube } from "lucide-react";
+import { ArrowUpRight, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 
 const cols = [
@@ -38,6 +38,7 @@ const cols = [
       { to: "/about", label: "Careers" },
       { to: "/about", label: "Partners" },
       { to: "/about", label: "Contact" },
+      { to: "/news/funding-announcement", label: "Funding announcement" },
     ],
   },
 ];
@@ -53,15 +54,51 @@ export function Footer() {
               Supplier intelligence and sourcing workspace for European procurement teams.
             </p>
             <p className="mt-3 max-w-sm text-xs leading-5 text-white/40">
-              Illustrative demo website. All organisations, people, metrics and company details
-              shown are fictional examples.
+              Illustrative demo website. Product screens, example organisations, pricing and
+              performance metrics are illustrative. Published company announcements are identified
+              separately.
             </p>
+            <div className="mt-6 max-w-sm rounded-xl border border-primary/15 bg-primary/[0.05] p-4">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+                Company record
+              </p>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/80">
+                <span>Backed by Dlabs</span>
+                <span className="font-mono text-white">$505K funding</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-4 text-xs">
+                {[
+                  ["Dlabs portfolio", "https://d-labs-site.vercel.app/companies"],
+                  ["LinkedIn", "https://www.linkedin.com/company/wastexa/"],
+                  ["Crunchbase", "https://www.crunchbase.com/organization/wastexa"],
+                ].map(([label, href]) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1 text-white/60 transition hover:text-primary focus-visible:text-primary"
+                  >
+                    {label} <ArrowUpRight size={11} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </div>
             <div className="mt-6 flex gap-3">
-              {[Linkedin, Twitter, Youtube].map((Icon, i) => (
+              <a
+                href="https://www.linkedin.com/company/wastexa/"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Wastexa on LinkedIn"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-white/55 transition hover:border-primary/30 hover:text-primary"
+              >
+                <Linkedin size={14} />
+              </a>
+              {[Twitter, Youtube].map((Icon, i) => (
                 <button
                   key={i}
                   type="button"
-                  aria-label={`Illustrative ${["LinkedIn", "X", "YouTube"][i]} link`}
+                  aria-label={`Illustrative ${["X", "YouTube"][i]} link`}
                   title="Illustrative social link"
                   className="inline-flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-white/45"
                 >

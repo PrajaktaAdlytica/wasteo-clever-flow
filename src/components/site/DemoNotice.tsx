@@ -7,8 +7,9 @@ export function DemoNotice() {
         <Info className="mt-1 shrink-0 text-primary/75" size={12} aria-hidden="true" />
         <p>
           <strong className="font-semibold text-white/75">Illustrative demo website.</strong>{" "}
-          Company names, testimonials, metrics, pricing, locations, certifications and product data
-          are fictional examples.
+          Product screens, testimonials, example organisations, pricing, certifications and
+          performance metrics are illustrative. Published company announcements are identified
+          separately.
         </p>
       </div>
     </aside>

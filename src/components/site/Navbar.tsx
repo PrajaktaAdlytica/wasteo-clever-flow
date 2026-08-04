@@ -13,6 +13,7 @@ const nav = [
   { to: "/solutions", label: "Solutions" },
   { to: "/resources", label: "Resources" },
   { to: "/about", label: "Company" },
+  { to: "/news/funding-announcement", label: "News" },
   { to: "/pricing", label: "Pricing" },
 ];
 
@@ -38,7 +39,7 @@ export function Navbar() {
         <Link to="/" className="flex items-center gap-2" aria-label="Wastexa home">
           <Logo className="h-7" />
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
           <div
             className="relative"
             onMouseEnter={() => setProdOpen(true)}
@@ -135,7 +136,8 @@ export function Navbar() {
               </Link>
             </div>
             <p className="mt-6 border-t border-white/8 pt-5 text-xs leading-5 text-white/45">
-              Illustrative demo website. All company and product data is fictional.
+              Illustrative demo website. Product content is illustrative; published company
+              announcements are identified separately.
             </p>
           </nav>
         </div>

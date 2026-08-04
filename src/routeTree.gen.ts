@@ -17,6 +17,7 @@ import { Route as RequestDemoRouteImport } from './routes/request-demo'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as NewsFundingAnnouncementRouteImport } from './routes/news.funding-announcement'
 import { Route as ProductsFindRouteImport } from './routes/products.find'
 import { Route as ProductsRfqRouteImport } from './routes/products.rfq'
 import { Route as ProductsRiskRouteImport } from './routes/products.risk'
@@ -61,6 +62,11 @@ const SolutionsRoute = SolutionsRouteImport.update({
   path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsFundingAnnouncementRoute = NewsFundingAnnouncementRouteImport.update({
+  id: '/news/funding-announcement',
+  path: '/news/funding-announcement',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsFindRoute = ProductsFindRouteImport.update({
   id: '/find',
   path: '/find',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRoute
   '/sign-in': typeof SignInRoute
   '/solutions': typeof SolutionsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/sign-in'
     | '/solutions'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   ResourcesRoute: typeof ResourcesRoute
   SignInRoute: typeof SignInRoute
   SolutionsRoute: typeof SolutionsRoute
+  NewsFundingAnnouncementRoute: typeof NewsFundingAnnouncementRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -228,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/funding-announcement': {
+      id: '/news/funding-announcement'
+      path: '/news/funding-announcement'
+      fullPath: '/news/funding-announcement'
+      preLoaderRoute: typeof NewsFundingAnnouncementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/find': {
       id: '/products/find'
       path: '/find'
@@ -277,6 +297,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResourcesRoute: ResourcesRoute,
   SignInRoute: SignInRoute,
   SolutionsRoute: SolutionsRoute,
+  NewsFundingAnnouncementRoute: NewsFundingAnnouncementRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
