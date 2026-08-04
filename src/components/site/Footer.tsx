@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Linkedin, Twitter, Youtube } from "lucide-react";
+import { ArrowUpRight, Twitter, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 
 const cols = [
@@ -67,33 +67,22 @@ export function Footer() {
                 <span className="font-mono text-white">$505K funding</span>
               </div>
               <div className="mt-3 flex flex-wrap gap-4 text-xs">
-                {[
-                  ["Dlabs portfolio", "https://d-labs-site.vercel.app/companies"],
-                  ["LinkedIn", "https://www.linkedin.com/company/wastexa/"],
-                  ["Crunchbase", "https://www.crunchbase.com/organization/wastexa"],
-                ].map(([label, href]) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1 text-white/60 transition hover:text-primary focus-visible:text-primary"
-                  >
-                    {label} <ArrowUpRight size={11} aria-hidden="true" />
-                  </a>
-                ))}
+                {[["Dlabs portfolio", "https://d-labs-site.vercel.app/companies"]].map(
+                  ([label, href]) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1 text-white/60 transition hover:text-primary focus-visible:text-primary"
+                    >
+                      {label} <ArrowUpRight size={11} aria-hidden="true" />
+                    </a>
+                  ),
+                )}
               </div>
             </div>
             <div className="mt-6 flex gap-3">
-              <a
-                href="https://www.linkedin.com/company/wastexa/"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Wastexa on LinkedIn"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-white/55 transition hover:border-primary/30 hover:text-primary"
-              >
-                <Linkedin size={14} />
-              </a>
               {[Twitter, Youtube].map((Icon, i) => (
                 <button
                   key={i}

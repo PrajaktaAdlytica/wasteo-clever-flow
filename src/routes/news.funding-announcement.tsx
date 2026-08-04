@@ -77,6 +77,27 @@ function FundingAnnouncementPage() {
                   </div>
                 ))}
               </dl>
+              <div className="mt-5 border-t border-white/6 pt-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                  Company profiles
+                </p>
+                <div className="mt-3 flex flex-wrap gap-4 text-sm">
+                  {[
+                    ["LinkedIn", "https://www.linkedin.com/company/wastexa/"],
+                    ["Crunchbase", "https://www.crunchbase.com/organization/wastexa"],
+                  ].map(([label, href]) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1 text-white/65 transition hover:text-primary focus-visible:text-primary"
+                    >
+                      {label} <ArrowUpRight size={13} aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </aside>
           </div>
         </article>
