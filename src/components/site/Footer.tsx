@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Twitter, Youtube } from "lucide-react";
+import { Twitter, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 
 const cols = [
@@ -58,30 +58,6 @@ export function Footer() {
               performance metrics are illustrative. Published company announcements are identified
               separately.
             </p>
-            <div className="mt-6 max-w-sm rounded-xl border border-primary/15 bg-primary/[0.05] p-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
-                Company record
-              </p>
-              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-white/80">
-                <span>Backed by Dlabs</span>
-                <span className="font-mono text-white">$505K funding</span>
-              </div>
-              <div className="mt-3 flex flex-wrap gap-4 text-xs">
-                {[["Dlabs portfolio", "https://d-labs-site.vercel.app/companies"]].map(
-                  ([label, href]) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1 text-white/60 transition hover:text-primary focus-visible:text-primary"
-                    >
-                      {label} <ArrowUpRight size={11} aria-hidden="true" />
-                    </a>
-                  ),
-                )}
-              </div>
-            </div>
             <div className="mt-6 flex gap-3">
               {[Twitter, Youtube].map((Icon, i) => (
                 <button
